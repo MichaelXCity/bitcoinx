@@ -27,11 +27,11 @@ type Project struct {
 // New will create a new project in the given directory.
 func New(name string) *Project {
 	p := &Project{
-		Name:  name,
-		Image: fmt.Sprintf("chainkit-%s", name),
+		Name:  name, "BitcoinX Blockchain"
+		Image: fmt.Sprintf("bitcoinx-%s", name),
 		Binaries: &binaries{
-			CLI:    name + "cli",
-			Daemon: name + "d",
+			CLI:    name + "bitcoinx-cli",
+			Daemon: name + "bitcoinxd",
 		},
 	}
 	return p
