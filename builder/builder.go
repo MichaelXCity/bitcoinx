@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"os/exec"
 
-	"github.com/blocklayerhq/chainkit/ui"
+	"github.com/blocklayerhq/bitcoinx/ui"
 )
 
 // Builder is a wrapper around `docker build` which provides a better UX.
@@ -85,7 +85,7 @@ func (b *Builder) Build(ctx context.Context, opts BuildOpts) error {
 }
 
 func (b *Builder) buildLog(output bytes.Buffer) error {
-	logfile, err := ioutil.TempFile("", "chainkit-build.*.log")
+	logfile, err := ioutil.TempFile("", "bitcoinx-build.*.log")
 	if err != nil {
 		return err
 	}
