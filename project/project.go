@@ -10,7 +10,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const manifestFile = "chainkit.yml"
+const manifestFile = "bitcoinx.yml"
 
 type binaries struct {
 	CLI    string
@@ -27,11 +27,11 @@ type Project struct {
 // New will create a new project in the given directory.
 func New(name string) *Project {
 	p := &Project{
-		Name:  name,
-		Image: fmt.Sprintf("chainkit-%s", name),
+		Name:  "bitcoinx",
+		Image: fmt.Sprintf("chainkit-%s", "bitcoinx"),
 		Binaries: &binaries{
-			CLI:    name + "cli",
-			Daemon: name + "d",
+			CLI:    "bitcoinx" + "cli",
+			Daemon: " bitcoinx" + "d",
 		},
 	}
 	return p
@@ -96,7 +96,7 @@ func Parse(r io.Reader) (*Project, error) {
 func Load(dir string) (*Project, error) {
 	f, err := os.Open(path.Join(dir, manifestFile))
 	if err != nil {
-		return nil, errors.Wrap(err, "Cannot find manifest (is it a chainkit project?)")
+		return nil, errors.Wrap(err, "Cannot find manifest (is it a bitcoinx project?)")
 	}
 	defer f.Close()
 	return Parse(f)
