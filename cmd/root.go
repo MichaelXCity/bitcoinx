@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/blocklayerhq/chainkit/ui"
+	"github.com/blocklayerhq/bitcoinx/ui"
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/ssh/terminal"
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "chainkit",
-	Short: "ChainKit is a toolkit for blockchain development.",
+	Use:   "bitcoinx",
+	Short: "bitcoinx is a toolkit for blockchain development.",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		// Enable/Disable text coloring.
 		if cmd.Flags().Changed("no-color") {
