@@ -28,7 +28,7 @@ type Project struct {
 func New(name string) *Project {
 	p := &Project{
 		Name:  "bitcoinx",
-		Image: fmt.Sprintf("chainkit-%s", "bitcoinx"),
+		Image: fmt.Sprintf("bitcoinx-%s", name),
 		Binaries: &binaries{
 			CLI:    "bitcoinx" + "cli",
 			Daemon: " bitcoinx" + "d",
