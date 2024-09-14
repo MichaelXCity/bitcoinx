@@ -5,18 +5,18 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/blocklayerhq/chainkit/ui"
+	"github.com/blocklayerhq/bitcoinx/ui"
 )
 
 const (
 	// minPort is the minimum port that will be used
-	minPort = 42000
+	minPort = 52000
 	// maxPort is the maximum port that will be used
-	maxPort = 60000
+	maxPort = 70000
 	// numPorts is the number of ports that will be used
-	numPorts = 4
+	numPorts = 5
 	// portStep is the step between port ranges
-	portStep = 10
+	portStep = 11
 )
 
 var (
