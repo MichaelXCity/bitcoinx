@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/blocklayerhq/bitcoinx/ui"
+	"github.com/blocklayerhq/chainkit/ui"
 )
 
 const (
