@@ -16,7 +16,7 @@ import (
 
 var startCmd = &cobra.Command{
 	Use:   "start",
-	Short: "Start the application",
+	Short: "Start the bitcoinx application",
 	Args:  cobra.ExactArgs(0),
 	Run: func(cmd *cobra.Command, args []string) {
 		rootDir := getCwd(cmd)
@@ -42,6 +42,7 @@ var startCmd = &cobra.Command{
 		ctx := context.Background()
 		cfg := &config.Config{
 			RootDir:        rootDir,
+			Projectname:    bitcoinx,
 			ChainID:        chainID,
 			PublishNetwork: true,
 		}
