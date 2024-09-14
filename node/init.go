@@ -12,10 +12,10 @@ import (
 	"path"
 	"strings"
 
-	"github.com/blocklayerhq/chainkit/config"
-	"github.com/blocklayerhq/chainkit/project"
-	"github.com/blocklayerhq/chainkit/ui"
-	"github.com/blocklayerhq/chainkit/util"
+	"github.com/blocklayerhq/bitcoinx/config"
+	"github.com/blocklayerhq/bitcoinx/project"
+	"github.com/blocklayerhq/bitcoinx/ui"
+	"github.com/blocklayerhq/bitcoinx/util"
 	"github.com/pkg/errors"
 )
 
