@@ -7,16 +7,16 @@ import (
 	"os"
 	"time"
 
-	"github.com/blocklayerhq/chainkit/config"
-	"github.com/blocklayerhq/chainkit/discovery"
-	"github.com/blocklayerhq/chainkit/project"
-	"github.com/blocklayerhq/chainkit/ui"
-	"github.com/blocklayerhq/chainkit/util"
+	"github.com/blocklayerhq/bitcoinx/config"
+	"github.com/blocklayerhq/bitcoinx/discovery"
+	"github.com/blocklayerhq/bitcoinx/project"
+	"github.com/blocklayerhq/bitcoinx/ui"
+	"github.com/blocklayerhq/bitcoinx/util"
 	"github.com/pkg/errors"
 	"golang.org/x/sync/errgroup"
 )
 
-// Node is a chainkit Node
+// Node is a BitcoinX Node
 type Node struct {
 	config *config.Config
 
@@ -68,7 +68,7 @@ func (n *Node) Start(ctx context.Context, p *project.Project, genesis []byte, ed
 		ui.Success("Success! Published network %s as %s\n\nOther nodes can now join this network by running:\n  %s\n",
 			ui.Emphasize(p.Name),
 			ui.Emphasize(chainID),
-			ui.Emphasize(fmt.Sprintf("chainkit join %s", chainID)),
+			ui.Emphasize(fmt.Sprintf("bitcoinx join %s", chainID)),
 		)
 	}
 
@@ -86,7 +86,7 @@ func (n *Node) Start(ctx context.Context, p *project.Project, genesis []byte, ed
 	ui.Success("  Node ID                   : %s", ui.Emphasize(peer.NodeID))
 	ui.Success("  Logs can be found in      : %s", ui.Emphasize(n.config.LogFile()))
 	ui.Success("  Application is live at    : %s", ui.Emphasize(fmt.Sprintf("http://localhost:%d/", n.config.Ports.TendermintRPC)))
-	ui.Success("  Cosmos Explorer is live at: %s", ui.Emphasize(fmt.Sprintf("http://localhost:%d/?rpc_port=%d", n.config.Ports.Explorer, n.config.Ports.TendermintRPC)))
+	ui.Success("  BitcoinX Explorer is live at: %s", ui.Emphasize(fmt.Sprintf("http://localhost:%d/?rpc_port=%d", n.config.Ports.Explorer, n.config.Ports.TendermintRPC)))
 
 	g, gctx := errgroup.WithContext(n.parentCtx)
 
@@ -152,7 +152,7 @@ func (n *Node) init(ctx context.Context, p *project.Project, genesis []byte, edi
 }
 
 func (n *Node) createNetwork(ctx context.Context, p *project.Project) (string, error) {
-	f, err := ioutil.TempFile(os.TempDir(), "chainkit-image")
+	f, err := ioutil.TempFile(os.TempDir(), "bitcoinx-image")
 	if err != nil {
 		return "", errors.Wrap(err, "unable to create temporary file")
 	}
