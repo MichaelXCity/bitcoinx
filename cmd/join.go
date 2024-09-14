@@ -8,20 +8,20 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/blocklayerhq/chainkit/config"
-	"github.com/blocklayerhq/chainkit/discovery"
-	"github.com/blocklayerhq/chainkit/node"
-	"github.com/blocklayerhq/chainkit/ui"
+	"github.com/blocklayerhq/bitcoinx/config"
+	"github.com/blocklayerhq/bitcoinx/discovery"
+	"github.com/blocklayerhq/bitcoinx/node"
+	"github.com/blocklayerhq/bitcoinx/ui"
 	"github.com/spf13/cobra"
 )
 
 var (
-	networksDir = os.ExpandEnv("$HOME/.chainkit/networks")
+	networksDir = os.ExpandEnv("$HOME/.bitcoinx/networks")
 )
 
 var joinCmd = &cobra.Command{
 	Use:   "join",
-	Short: "Join a network",
+	Short: "Join a bitcoinx network",
 	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		var (
@@ -33,6 +33,7 @@ var joinCmd = &cobra.Command{
 		ui.Info("Joining network %s", ui.Emphasize(chainID))
 		cfg := &config.Config{
 			RootDir:        path.Join(networksDir, filepath.Base(chainID)),
+			Projectname:    " bitcoinx "
 			PublishNetwork: false,
 			ChainID:        chainID,
 		}
