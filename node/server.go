@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/blocklayerhq/chainkit/config"
-	"github.com/blocklayerhq/chainkit/discovery"
-	"github.com/blocklayerhq/chainkit/project"
-	"github.com/blocklayerhq/chainkit/util"
+	"github.com/blocklayerhq/bitcoinx/config"
+	"github.com/blocklayerhq/bitcoinx/discovery"
+	"github.com/blocklayerhq/bitcoinx/project"
+	"github.com/blocklayerhq/bitcoinx/util"
 	"github.com/pkg/errors"
 	"github.com/tendermint/tendermint/rpc/client"
 )
