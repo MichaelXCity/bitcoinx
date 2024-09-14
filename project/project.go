@@ -10,7 +10,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-const manifestFile = "chainkit.yml"
+const manifestFile = "bitcoinx.yml"
 
 type binaries struct {
 	CLI    string
@@ -28,7 +28,7 @@ type Project struct {
 func New(name string) *Project {
 	p := &Project{
 		Name:  name,
-		Image: fmt.Sprintf("chainkit-%s", name),
+		Image: fmt.Sprintf("bitcoinx-%s", name),
 		Binaries: &binaries{
 			CLI:    name + "cli",
 			Daemon: name + "d",
