@@ -6,11 +6,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/blocklayerhq/chainkit/config"
-	"github.com/blocklayerhq/chainkit/discovery"
-	"github.com/blocklayerhq/chainkit/node"
-	"github.com/blocklayerhq/chainkit/project"
-	"github.com/blocklayerhq/chainkit/ui"
+	"github.com/blocklayerhq/bitcoinx/config"
+	"github.com/blocklayerhq/bitcoinx/discovery"
+	"github.com/blocklayerhq/bitcoinx/node"
+	"github.com/blocklayerhq/bitcoinx/project"
+	"github.com/blocklayerhq/bitcoinx/ui"
 	"github.com/spf13/cobra"
 )
 
